@@ -1,0 +1,300 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <properties>
+    <gw.config.fileName>gw-config.json</gw.config.fileName>
+  </properties>
+
+  <parent>
+    <groupId>com.microsoft.azure.gateway</groupId>
+    <artifactId>gateway-module-base</artifactId>
+    <version>1.0.0</version>
+  </parent>
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.microsoft.gateway</groupId>
+  <artifactId>sample-send-module</artifactId>
+  <version>1.1.0</version>
+  <packaging>jar</packaging>
+
+  <dependencies>
+    <!-- Dependencies from parent -->
+    <dependency>
+      <groupId>com.microsoft.azure.gateway</groupId>
+      <artifactId>gateway-java-binding</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>${dependency.runtime.group}</groupId>
+      <artifactId>${dependency.runtime.name}</artifactId>
+    </dependency>
+    <!-- Local dependencies -->
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.12</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.jmockit</groupId>
+      <artifactId>jmockit</artifactId>
+      <version>1.8</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.google.code.gson</groupId>
+      <artifactId>gson</artifactId>
+      <version>2.8.0</version>
+      <type>jar</type>
+    </dependency>
+    
+    <dependency>
+      <groupId>com.googlecode.json-simple</groupId>
+      <artifactId>json-simple</artifactId>
+      <version>1.1.1</version>
+    </dependency>
+    
+    <dependency>
+      <groupId>com.microsoft.azure.sdk.iot</groupId>
+      <artifactId>iot-device-client</artifactId>
+      <version>1.1.26</version>
+      <type>jar</type>
+    </dependency>
+    <!-- Added for Service bus -->
+    <dependency>
+      <groupId>${dependency.runtime.group}</groupId>
+      <artifactId>${dependency.runtime.name}</artifactId>
+    </dependency>
+    <!-- Local dependencies -->
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.12</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.jmockit</groupId>
+      <artifactId>jmockit</artifactId>
+      <version>1.8</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.google.code.gson</groupId>
+      <artifactId>gson</artifactId>
+      <version>2.8.0</version>
+      <type>jar</type>
+    </dependency>
+    <dependency>
+      <groupId>com.googlecode.json-simple</groupId>
+      <artifactId>json-simple</artifactId>
+      <version>1.1.1</version>
+    </dependency>
+    
+    <dependency>
+      <groupId>com.microsoft.azure.sdk.iot</groupId>
+      <artifactId>iot-device-client</artifactId>
+      <version>1.1.26</version>
+      <type>jar</type>
+    </dependency>
+<!-- https://mvnrepository.com/artifact/org.glassfish.jersey.core/jersey-client 
+<dependency>
+    <groupId>org.glassfish.jersey.core</groupId>
+    <artifactId>jersey-client</artifactId>
+    <version>2.12</version>
+</dependency>
+
+
+<dependency>
+    <groupId>org.glassfish.jersey.bundles</groupId>
+    <artifactId>jaxrs-ri</artifactId>
+    <version>2.0</version>
+</dependency>
+
+ https://mvnrepository.com/artifact/com.sun.jersey/jersey-client -->
+<dependency>
+    <groupId>com.sun.jersey</groupId>
+    <artifactId>jersey-client</artifactId>
+    <version>1.19</version>
+</dependency>
+
+<!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind -->
+<dependency>
+    <groupId>com.fasterxml.jackson.core</groupId>
+    <artifactId>jackson-databind</artifactId>
+    <version>2.0.0</version>
+</dependency>
+<dependency>
+   <groupId>org.codehaus.jackson</groupId>
+   <artifactId>jackson-mapper-asl</artifactId>
+   <version>1.9.9</version>
+</dependency>
+
+   <!-- https://mvnrepository.com/artifact/com.microsoft.azure/azure-servicebus -->
+
+		<dependency>
+		    <groupId>com.microsoft.azure</groupId>
+		    <artifactId>azure-servicebus</artifactId>
+		    <version>0.9.1</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/com.microsoft.azure/azure-servicebus -->
+
+	<!-- https://mvnrepository.com/artifact/com.microsoft.azure/azure-storage -->
+		<dependency>
+		    <groupId>com.microsoft.azure</groupId>
+		    <artifactId>azure-storage</artifactId>
+		    <version>1.2.0</version>
+		</dependency>
+			<!-- https://mvnrepository.com/artifact/com.microsoft.azure/azure-client-authentication -->
+				<dependency>
+				    <groupId>com.microsoft.azure</groupId>
+				    <artifactId>azure-client-authentication</artifactId>
+				    <version>1.0.0-beta3</version>
+				    <scope>test</scope>
+				</dependency>	
+   		
+		<!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-api -->
+			<dependency>
+			    <groupId>org.slf4j</groupId>
+			    <artifactId>slf4j-api</artifactId>
+			    <version>1.7.12</version>
+			</dependency>
+			<!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-simple -->
+					<dependency>
+					    <groupId>org.slf4j</groupId>
+					    <artifactId>slf4j-simple</artifactId>
+					    <version>1.7.24</version>
+					</dependency>
+					<!-- https://mvnrepository.com/artifact/com.spatial4j/spatial4j -->
+						<dependency>
+						    <groupId>com.spatial4j</groupId>
+						    <artifactId>spatial4j</artifactId>
+						    <version>0.3</version>
+						</dependency>
+				
+					
+						<!-- https://mvnrepository.com/artifact/io.netty/netty-all -->
+							<dependency>
+							    <groupId>io.netty</groupId>
+							    <artifactId>netty-all</artifactId>
+							    <version>4.0.4.Final</version>
+							</dependency>				
+						<dependency>
+							<groupId>org.apache.qpid</groupId>
+							<artifactId>proton-j</artifactId>
+							<version>0.18.0</version>
+							<type>jar</type>
+						</dependency>
+						<dependency>
+						  <groupId>com.microsoft.azure.iothub-java-client</groupId>
+						  <artifactId>iothub-java-service-client</artifactId>
+						  <version>1.0.11</version>
+						</dependency>
+
+						<dependency>
+							  <groupId>com.microsoft.azure.iothub-java-client</groupId>
+							  <artifactId>iothub-java-device-client</artifactId>
+							  <version>1.0.16</version>
+						</dependency>
+						<dependency>	 
+							<groupId>org.eclipse.paho</groupId>
+							<artifactId>org.eclipse.paho.client.mqttv3</artifactId>
+							<version>1.1.0</version>
+						</dependency>
+						
+						<dependency> 
+								<groupId>com.microsoft.azure</groupId> 
+								<artifactId>azure-eventhubs</artifactId> 
+								<version>0.10.0</version> 
+						</dependency>
+						<!-- https://mvnrepository.com/artifact/com.microsoft.azure/azure-eventhubs-eph -->
+							<dependency>
+								<groupId>com.microsoft.azure</groupId>
+								<artifactId>azure-eventhubs-eph</artifactId>
+								<version>0.7.2</version>
+							</dependency>
+			
+					<!-- https://mvnrepository.com/artifact/com.microsoft.azure.iothub-java-client/iothub-java-service-client -->
+				
+					
+					<dependency>
+					   <groupId>commons-codec</groupId>
+					   <artifactId>commons-codec</artifactId>
+					   <version>1.10</version>
+					</dependency>
+					<!-- https://mvnrepository.com/artifact/com.microsoft.azure/azure-eventhubs -->
+					<dependency>
+						<groupId>com.microsoft.azure</groupId>
+						<artifactId>azure-eventhubs</artifactId>
+						<version>0.7.0</version>
+					</dependency>
+
+					<!-- https://mvnrepository.com/artifact/com.microsoft.azure/azure-eventhubs-eph -->
+					<dependency>
+						<groupId>com.microsoft.azure</groupId>
+						<artifactId>azure-eventhubs-eph</artifactId>
+						<version>0.7.2</version>
+					</dependency>
+
+				
+    
+  </dependencies>
+
+  <build>
+    <plugins>
+      <!-- Plugins from parent -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-dependency-plugin</artifactId>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-resources-plugin</artifactId>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-shade-plugin</artifactId>
+      </plugin>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>exec-maven-plugin</artifactId>
+      </plugin>
+
+      <!-- Set Java version to support lambda expression -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.6.1</version>
+        <configuration>
+          <source>1.8</source>
+          <target>1.8</target>
+        </configuration>
+      </plugin>
+
+      <!-- JMockit configuration  -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <version>2.19.1</version>
+        <configuration>
+          <argLine>
+            -Dfile.encoding=UTF-8 -javaagent:${settings.localRepository}/org/jmockit/jmockit/1.22/jmockit-1.22.jar
+          </argLine>
+        </configuration>
+      </plugin>
+<plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-shade-plugin</artifactId>
+        <version>3.0.0</version>
+        <executions>
+          <execution>
+            <goals>
+              <goal>shade</goal>
+            </goals>
+            <configuration>
+              <transformers>
+                <transformer implementation="org.apache.maven.plugins.shade.resource.ServicesResourceTransformer"/>
+              </transformers>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+</project>

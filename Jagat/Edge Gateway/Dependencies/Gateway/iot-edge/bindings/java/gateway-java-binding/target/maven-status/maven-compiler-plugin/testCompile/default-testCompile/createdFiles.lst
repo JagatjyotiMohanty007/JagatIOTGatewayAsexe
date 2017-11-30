@@ -1,0 +1,4 @@
+tests\unit\com\microsoft\azure\gateway\core\GatewayModuleTest$TestModule.class
+tests\unit\com\microsoft\azure\gateway\messaging\MessageTest.class
+tests\unit\com\microsoft\azure\gateway\core\GatewayModuleTest.class
+tests\unit\com\microsoft\azure\gateway\messaging\MessageTest$1.class

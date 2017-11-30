@@ -1,0 +1,5 @@
+com\microsoft\azure\gateway\core\IGatewayModule.class
+com\microsoft\azure\gateway\core\LocalBroker.class
+com\microsoft\azure\gateway\core\GatewayModule.class
+com\microsoft\azure\gateway\messaging\Message.class
+com\microsoft\azure\gateway\core\Broker.class

@@ -1,0 +1,64 @@
+{
+  "loaders": [
+      {
+          "type": "java",
+          "name": "java",
+          "configuration":{
+              "jvm.options":{
+                  "library.path": "..\\..\\bindings\\java\\Debug"
+              },
+              "binding.path": "..\\..\\bindings\\java\\Debug\\java_module_host.dll"
+          }
+          
+      }
+  ],
+  "modules": [
+  
+      {
+          "name": "sendmodule",
+          "loader":{
+              "name": "java",
+              "entrypoint": {
+                  "class.name": "com/microsoft/azure/gateway/sample/SendModule",
+                  "class.path": "..\\..\\..\\samples\\java_sample\\java_modules\\SendModule\\target\\sample-send-module-1.1.0-with-deps.jar"
+              }
+          },
+          "args": null
+      },
+      {
+          "name": "readmodule",
+          "loader":{
+              "name": "java",
+              "entrypoint": {
+				  "class.name": "com/microsoft/azure/gateway/sample/ReadModule",
+                  "class.path": "..\\..\\..\\samples\\java_sample\\java_modules\\ReadModule\\target\\sample-read-module-1.1.0-with-deps.jar"
+              }
+          },
+          "args": null
+      },
+      {
+          "name": "logger",
+          "loader": {
+              "name": "native",
+              "entrypoint": {
+                  "module.path": "..\\..\\modules\\logger\\Debug\\logger.dll"
+              }
+          },
+          "args": { "filename": "Gatewaylog.txt" }
+      }
+  ],
+  "links": [
+      {
+          "source": "*",
+          "sink": "logger"
+      },
+      {
+          "source": "readmodule",
+          "sink": "sendmodule"
+      },
+      {
+          "source": "sendmodule",
+          "sink": "readmodule"
+      }
+  ]
+}
